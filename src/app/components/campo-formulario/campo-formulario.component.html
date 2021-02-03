@@ -1,0 +1,9 @@
+<div>
+    <label>{{nome}}</label>
+    <div>
+        <ng-content></ng-content>
+    </div>
+    <div *ngIf="campo.touched && campo.invalid">
+        {{exibirErro(campo.errors | json)}}
+    </div>
+</div>

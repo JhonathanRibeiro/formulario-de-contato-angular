@@ -1,0 +1,64 @@
+
+<div class="container">
+    <form [formGroup]="form">
+        <label class="title">{{title}}</label>
+        <br><br>
+        <label>Nome</label>
+        <br>
+        <input formControlName="nome" required>
+        <label class="text-danger" *ngIf="nome.touched && nome.invalid">O campo nome é obrigatório</label>
+        <br>
+        <br>
+        <label>E-mail</label>
+        <br>
+
+        <input formControlName="email" required>
+        <label class="text-danger" *ngIf="email.touched && email.hasError('required')">O campo email é obrigatório</label>
+        <label class="text-danger" *ngIf="email.touched && email.hasError('email')">Email inválido</label>
+        <br>
+        <br>
+
+        <label>Tipo de Pessoa</label>
+        <br>
+        <select formControlName="tipoPessoa">
+            <option value="FISICA">Fisica</option>
+            <option value="JURIDICA">Juridica</option>
+        </select>
+        <br>
+        <label class="text-danger" *ngIf="tipoPesssoa.touched && tipoPesssoa.hasError('required')">O campo email é
+            obrigatório</label>
+        <br>
+        <br>
+
+        <label>CPF:</label>
+        <br>
+        <input formControlName="cpf">
+        <br>
+        <br>
+
+        <label>CNPJ</label>
+        <br>
+        <input formControlName="cnpj">
+        <br>
+        <br>
+
+        <label>Mensagem</label>
+        <br>
+        <input formControlName="mensagem">
+        <br>
+        <br>
+
+        <button (click)="salvar()">Salvar</button>
+        <button (click)="limpar()">Limpar</button>
+    </form>
+
+    <!-- <div id="result">
+        <p>{{nome.value}}</p>
+        <p>{{email.value}}</p>
+        <p>{{cpf.value}}</p>
+        <p>{{cnpj.value}}</p>
+        <p>{{mensagem.value}}</p>
+        <p>{{cnpj.value}}</p>
+    </div> -->
+
+</div>
